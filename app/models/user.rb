@@ -52,8 +52,8 @@ class User < ActiveRecord::Base
   
     def encrypt(string)
       secure_hash("#{salt}--#{string}")
-      string #Only temporary implementation
     end
+    
     
     def make_salt
       secure_hash("#{Time.now.utc}--#{password}")
